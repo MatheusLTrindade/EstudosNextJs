@@ -18,7 +18,7 @@ const CartTableRow = (props: {
     <tr>
       <td>
         <Row className='align-items-center'>
-          <Col xs={4} md={3} lg={2}>
+          <Col xs={5} md={3} lg={2}>
             <Image src={props.entry.product.imageUrl} alt={props.entry.product.name} height={50} width={60} />
           </Col>
           <Col xs={8} md={13} lg={15}>
@@ -26,9 +26,9 @@ const CartTableRow = (props: {
           </Col>
         </Row>
       </td>
-      <td>R$ {props.entry.product.price}</td>
+      <td>R${props.entry.product.price}</td>
       <td>{props.entry.quantity}</td>
-      <td>R$ {(props.entry.product.price * props.entry.quantity)}</td>
+      <td>R${(props.entry.product.price * props.entry.quantity)}</td>
       <td>
         <Button color='primary' size='sm' onClick={() => addProduct(props.entry.product)}>
           +
@@ -71,7 +71,7 @@ export default function CartTable() {
   }, [cart])
 
   return (
-    <Table responsive className='align-middle table table-hover table-responsive' style={{ minWidth: '32rem' }}>
+    <Table responsive className='align-middle table table-hover table-responsive' style={{ width:'100%', height:'100%'  }}>
       <thead>
         <tr>
           <th scope='col'>Produto</th>
